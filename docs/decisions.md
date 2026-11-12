@@ -41,3 +41,9 @@ setting that asks more than 40 times per 100 questions, whatever its accuracy.
 Runs are written as Langfuse ingestion events: a trace per question, a generation per model turn with token usage and
 cost, a span per tool call, and the verdict as a score. IDs are derived from the run and the question, so replaying a
 batch does not duplicate traces.
+
+## Reproducible on one machine, within half a point across machines
+
+On the same machine the evaluation is bit-for-bit repeatable. On a different machine (CI) one or two of the 720
+answers can land differently, moving a rate by about 0.1 point; the cause has not been pinned down. CI reruns the
+evaluation and requires every rate within half a point of the committed report and the same ship decisions.

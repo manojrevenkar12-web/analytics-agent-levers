@@ -54,11 +54,11 @@
    "gave_up": 0.002777777777777778,
    "asked_per_100": 0.0,
    "turns": 4.463888888888889,
-   "usd_per_question": 0.02449019166666667,
+   "usd_per_question": 0.024490104166666665,
    "usd_p95": 0.04035345,
-   "usd_per_correct": 0.0713884129554656,
-   "seconds_p50": 11.669225224000252,
-   "seconds_p95": 19.48836949929994,
+   "usd_per_correct": 0.07138815789473683,
+   "seconds_p50": 11.66777178650002,
+   "seconds_p95": 19.479113807450027,
    "by_kind": {
     "unanswerable": {
      "wrong": 1.0,
@@ -90,11 +90,11 @@
    "gave_up": 0.0,
    "asked_per_100": 0.0,
    "turns": 4.2125,
-   "usd_per_question": 0.025667775,
+   "usd_per_question": 0.025667683333333333,
    "usd_p95": 0.029860949999999997,
-   "usd_per_correct": 0.03390972110091743,
-   "seconds_p50": 11.669506057500053,
-   "seconds_p95": 14.277792180750271,
+   "usd_per_correct": 0.0339096,
+   "seconds_p50": 11.666139698499842,
+   "seconds_p95": 14.272652204249777,
    "by_kind": {
     "unanswerable": {
      "wrong": 1.0,
@@ -125,11 +125,11 @@
    "gave_up": 0.0,
    "asked_per_100": 0.0,
    "turns": 4.1819444444444445,
-   "usd_per_question": 0.022087104166666666,
+   "usd_per_question": 0.022086975,
    "usd_p95": 0.03206115,
-   "usd_per_correct": 0.03518299778761062,
-   "seconds_p50": 11.664099950999935,
-   "seconds_p95": 16.875539360999962,
+   "usd_per_correct": 0.03518279203539823,
+   "seconds_p50": 11.661592974999985,
+   "seconds_p95": 16.87217464175009,
    "by_kind": {
     "unanswerable": {
      "wrong": 1.0,
@@ -160,11 +160,11 @@
    "gave_up": 0.0,
    "asked_per_100": 78.05555555555556,
    "turns": 5.091666666666667,
-   "usd_per_question": 0.027695475,
+   "usd_per_question": 0.027695558333333335,
    "usd_p95": 0.03840075,
-   "usd_per_correct": 0.0538938972972973,
-   "seconds_p50": 14.264645240500045,
-   "seconds_p95": 19.47212145565003,
+   "usd_per_correct": 0.053894059459459465,
+   "seconds_p50": 14.265198432500142,
+   "seconds_p95": 19.467554012000026,
    "by_kind": {
     "unanswerable": {
      "wrong": 1.0,
@@ -195,11 +195,11 @@
    "gave_up": 0.0,
    "asked_per_100": 0.0,
    "turns": 3.426388888888889,
-   "usd_per_question": 0.018600179166666665,
+   "usd_per_question": 0.018600166666666664,
    "usd_p95": 0.022026,
-   "usd_per_correct": 0.0704848894736842,
-   "seconds_p50": 9.060751965999703,
-   "seconds_p95": 11.67388978690002,
+   "usd_per_correct": 0.07048484210526315,
+   "seconds_p50": 9.06144113349983,
+   "seconds_p95": 11.674272449950024,
    "by_kind": {
     "unanswerable": {
      "correct": 1.0,
@@ -229,11 +229,11 @@
    "gave_up": 0.0,
    "asked_per_100": 27.5,
    "turns": 4.191666666666666,
-   "usd_per_question": 0.023255579166666665,
+   "usd_per_question": 0.023255483333333334,
    "usd_p95": 0.035229,
-   "usd_per_correct": 0.025524416158536584,
-   "seconds_p50": 11.661828172999913,
-   "seconds_p95": 16.8797914348497,
+   "usd_per_correct": 0.025524310975609754,
+   "seconds_p50": 11.658811195000135,
+   "seconds_p95": 16.874133636699923,
    "by_kind": {
     "unanswerable": {
      "correct": 1.0,
@@ -265,11 +265,11 @@
    "gave_up": 0.0,
    "asked_per_100": 34.166666666666664,
    "turns": 4.141666666666667,
-   "usd_per_question": 0.021740433333333333,
+   "usd_per_question": 0.02174045,
    "usd_p95": 0.0317025,
-   "usd_per_correct": 0.03027681237911025,
-   "seconds_p50": 11.66098908150027,
-   "seconds_p95": 16.864404259700294,
+   "usd_per_correct": 0.030276835589941972,
+   "seconds_p50": 11.661699483500024,
+   "seconds_p95": 16.864116183250236,
    "by_kind": {
     "unanswerable": {
      "correct": 1.0,
@@ -301,11 +301,11 @@
    "gave_up": 0.0,
    "asked_per_100": 54.30555555555556,
    "turns": 4.4847222222222225,
-   "usd_per_question": 0.027090383333333336,
-   "usd_p95": 0.035565599999999996,
-   "usd_per_correct": 0.031059038216560513,
-   "seconds_p50": 11.67489332599987,
-   "seconds_p95": 16.871101621099797,
+   "usd_per_question": 0.027090366666666667,
+   "usd_p95": 0.03556845,
+   "usd_per_correct": 0.031059019108280256,
+   "seconds_p50": 11.676280061499961,
+   "seconds_p95": 16.872348621849937,
    "by_kind": {
     "unanswerable": {
      "correct": 1.0,
@@ -338,11 +338,11 @@
    "gave_up": 0.0,
    "asked_per_100": 0.0,
    "turns": 3.8569444444444443,
-   "usd_per_question": 0.021261683333333333,
+   "usd_per_question": 0.021261666666666665,
    "usd_p95": 0.0292323,
-   "usd_per_correct": 0.0249729396411093,
-   "seconds_p50": 11.655817430499974,
-   "seconds_p95": 14.276380045049688,
+   "usd_per_correct": 0.024972920065252854,
+   "seconds_p50": 11.6552411329998,
+   "seconds_p95": 14.274649986500174,
    "by_kind": {
     "unanswerable": {
      "correct": 1.0,
@@ -373,11 +373,11 @@
    "gave_up": 0.0,
    "asked_per_100": 27.5,
    "turns": 4.381944444444445,
-   "usd_per_question": 0.024493245833333333,
+   "usd_per_question": 0.024493162500000002,
    "usd_p95": 0.03534465,
-   "usd_per_correct": 0.029100886138613863,
-   "seconds_p50": 11.665049080999916,
-   "seconds_p95": 16.881835464150118,
+   "usd_per_correct": 0.029100787128712877,
+   "seconds_p50": 11.662476490499921,
+   "seconds_p95": 16.87533229999972,
    "by_kind": {
     "unanswerable": {
      "wrong": 1.0,
@@ -479,7 +479,7 @@
     },
     {
      "check": "cost per question (USD)",
-     "value": 0.025667775,
+     "value": 0.025667683333333333,
      "limit": 0.05,
      "ok": true
     },
@@ -518,7 +518,7 @@
     },
     {
      "check": "cost per question (USD)",
-     "value": 0.022087104166666666,
+     "value": 0.022086975,
      "limit": 0.05,
      "ok": true
     },
@@ -557,7 +557,7 @@
     },
     {
      "check": "cost per question (USD)",
-     "value": 0.027695475,
+     "value": 0.027695558333333335,
      "limit": 0.05,
      "ok": true
     },
@@ -596,7 +596,7 @@
     },
     {
      "check": "cost per question (USD)",
-     "value": 0.018600179166666665,
+     "value": 0.018600166666666664,
      "limit": 0.05,
      "ok": true
     },
@@ -635,7 +635,7 @@
     },
     {
      "check": "cost per question (USD)",
-     "value": 0.023255579166666665,
+     "value": 0.023255483333333334,
      "limit": 0.05,
      "ok": true
     },
@@ -674,7 +674,7 @@
     },
     {
      "check": "cost per question (USD)",
-     "value": 0.021740433333333333,
+     "value": 0.02174045,
      "limit": 0.05,
      "ok": true
     },
@@ -713,7 +713,7 @@
     },
     {
      "check": "cost per question (USD)",
-     "value": 0.027090383333333336,
+     "value": 0.027090366666666667,
      "limit": 0.05,
      "ok": true
     },
@@ -752,7 +752,7 @@
     },
     {
      "check": "cost per question (USD)",
-     "value": 0.021261683333333333,
+     "value": 0.021261666666666665,
      "limit": 0.05,
      "ok": true
     },
@@ -791,7 +791,7 @@
     },
     {
      "check": "cost per question (USD)",
-     "value": 0.024493245833333333,
+     "value": 0.024493162500000002,
      "limit": 0.05,
      "ok": true
     },
@@ -855,5 +855,5 @@
    }
   }
  },
- "seconds": 40.5
+ "seconds": 38.1
 }
