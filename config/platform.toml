@@ -1,0 +1,107 @@
+# Every setting the product uses: the agent loop, the levers, model prices, the metric catalogue and the launch gate.
+
+[agent]
+max_turns = 10
+system_prompt_tokens = 900          # instructions and tool definitions sent on every turn
+output_tokens_per_turn = 120        # a tool call or a short answer
+answer_tokens = 220
+chars_per_token = 4
+
+[model]
+# Prices and speed of the model behind the agent (USD per million tokens). Change these to price another model.
+name = "claude-sonnet-class"
+input_usd_per_mtok = 3.0
+output_usd_per_mtok = 15.0
+seconds_per_turn = 1.1              # time to first token plus planning
+output_tokens_per_second = 80
+
+[levers]
+# The product changes under test. Each is off in the baseline.
+order = ["descriptions", "metric_catalog", "clarify", "abstain"]
+abstain_below_confidence = 0.55     # with the abstain lever, the agent says it is not sure below this
+clarify_margin = 0.25               # with the clarify lever, it asks when two readings score this close
+
+[levers.labels]
+descriptions = "Table and column descriptions"
+metric_catalog = "Verified metric catalogue"
+clarify = "Ask when a term is ambiguous"
+abstain = "Say 'not sure' below a confidence floor"
+
+# The company's metric definitions. The catalogue lever exposes the verified ones through the get_metric tool; the
+# rest exist only in the data team's heads, which is what the agent faces without the lever. Each is an aggregate over
+# one table, with a filter and the date it is counted on ("d" is the table, "a" the joined accounts).
+[metrics.net_revenue]
+verified = true
+terms = ["revenue", "net revenue", "sales"]
+description = "Revenue as finance reports it: net of tax and discounts, paid invoices only, from the daily revenue mart."
+table = "mart_revenue_daily"
+agg = "round(sum(d.net_revenue), 2)"
+filter = ""
+date = "d.day"
+
+[metrics.gross_revenue]
+verified = true
+terms = ["gross revenue", "billings"]
+description = "Gross billings: paid invoices before tax and discounts."
+table = "fct_invoices"
+agg = "round(sum(d.amount_gross), 2)"
+filter = "d.status = 'paid'"
+date = "d.issued"
+
+[metrics.active_accounts]
+verified = true
+terms = ["active customers", "active accounts"]
+description = "Accounts with at least one login in the period (not accounts with a running subscription)."
+table = "raw_events"
+agg = "uniqExact(d.account_id)"
+filter = "d.event = 'login'"
+date = "toDate(d.ts)"
+
+[metrics.tickets_opened]
+verified = true
+terms = ["support tickets", "tickets opened", "support tickets opened"]
+description = "Support tickets opened in the period."
+table = "fct_support_tickets"
+agg = "count()"
+filter = ""
+date = "toDate(d.opened)"
+
+[metrics.refunds]
+verified = false
+terms = ["refunds", "refunded"]
+description = "Net amount of invoices refunded in the period."
+table = "fct_invoices"
+agg = "round(sum(d.amount_net), 2)"
+filter = "d.status = 'refunded'"
+date = "d.issued"
+
+[metrics.queries]
+verified = false
+terms = ["queries run", "query volume"]
+description = "Queries customers ran, from daily usage."
+table = "fct_usage_daily"
+agg = "sum(d.queries)"
+filter = ""
+date = "d.day"
+
+[metrics.csat]
+verified = false
+terms = ["customer satisfaction", "csat"]
+description = "Average CSAT (1-5) of tickets closed in the period that have a rating."
+table = "fct_support_tickets"
+agg = "round(avg(d.csat), 3)"
+filter = "d.csat IS NOT NULL AND d.closed IS NOT NULL"
+date = "toDate(d.closed)"
+
+[gate]
+# A lever ships if, on the tuning questions, its paired 95% interval for correctness gain is above zero, it does not
+# raise confidently wrong answers, an answer stays within the cost budget, and it does not question people too often.
+min_correct_gain = 0.0
+max_wrong_increase = 0.005
+max_usd_per_answer = 0.05
+max_asked_per_100 = 40            # clarifying questions are friction: more than this and people stop asking
+bootstrap = 2000
+
+[eval]
+seeds = [11, 23, 37]
+heldout_seed = 47

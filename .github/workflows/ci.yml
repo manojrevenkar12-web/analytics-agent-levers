@@ -1,0 +1,79 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: lint, tests, held-out lock
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: pytest -q
+
+  evaluate:
+    name: the evaluation reproduces the committed report
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - run: cp reports/evaluation.json /tmp/committed.json && python scripts/evaluate.py
+      - name: same verdicts and rates as committed
+        run: |
+          python3 - <<'PY'
+          import json
+          a = json.load(open("/tmp/committed.json")); b = json.load(open("reports/evaluation.json"))
+          for k in a["summary"]:
+              for m in ("correct", "wrong", "missed", "asked_per_100"):
+                  assert abs(a["summary"][k][m] - b["summary"][k][m]) < 1e-9, (k, m)
+          assert {k: v["ship"] for k, v in a["gate"].items()} == {k: v["ship"] for k, v in b["gate"].items()}
+          print("reproduced", len(a["summary"]), "settings")
+          PY
+
+  mcp:
+    name: MCP server answers over stdio
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - run: |
+          printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' '{"jsonrpc":"2.0","id":2,"method":"tools/list"}' \
+            | python -m alv.mcp_server | tee /tmp/out.jsonl
+          grep -q '"get_metric"' /tmp/out.jsonl
+
+  web:
+    name: dashboard
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build

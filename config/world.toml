@@ -1,0 +1,76 @@
+# The simulated company, its warehouse and the stand-in for the model. Only src/alv/world, src/alv/evals and scripts
+# read this file. The agent sees the question text and what its tools return, nothing else.
+
+[warehouse]
+seed = 7
+accounts = 700                    # at most 720: names are unique, but "Acme Robotics" exists as GmbH, AG, Ltd...
+start = "2024-01-01"
+end = "2026-09-30"
+invoices_per_account_month = 1.6
+usage_share = 0.7                 # accounts that log usage on a given day
+events_per_account = 260          # product events (logins and others) over the whole period
+tickets = 18000
+payment_retry_share = 0.06        # stg_payments rows that are retries of a payment already recorded
+legacy_cutoff = "2025-06-30"      # legacy_invoices stopped receiving data here
+backfill_share = 0.35             # tmp_revenue_backfill holds this share of days
+
+[questions]
+seed = 11
+count = 240
+ambiguous_share = 0.25            # questions that use a business term the company defines one way ("revenue")
+unanswerable_share = 0.12         # questions the warehouse cannot answer (marketing spend, NPS)
+entity_share = 0.25               # questions about one named account
+grouped_share = 0.25              # questions that ask for a breakdown
+
+# The stand-in for the model. It is a seeded policy, not an LLM: it maps question words to tables and columns by the
+# words it can see, and it makes the mistakes an LLM makes when it cannot see a definition. Every lever works by
+# changing what it can see; no lever changes these numbers.
+[model]
+seed = 3
+temperature = 0.35                # how close two candidate tables must score before it picks the wrong one
+parse_error = 0.03                # misreads the period or a filter
+status_filter_when_unsure = 0.45  # remembers to keep only paid invoices when nothing tells it to
+duplicate_aware_when_unsure = 0.2 # remembers that a staging table can hold retries
+entity_first_match = 0.8          # takes the first name match without checking for near-duplicates
+
+[model.vocabulary]
+# General words a model associates with each business term. Not the company's definitions.
+revenue = ["revenue", "invoice", "invoices", "payment", "payments", "amount", "billing", "paid"]
+net_revenue = ["net", "revenue", "invoice", "amount", "paid"]
+gross_revenue = ["gross", "invoice", "amount", "billing", "paid"]
+active_accounts = ["active", "accounts", "customers", "subscription", "login", "events"]
+queries = ["usage", "queries", "query"]
+csat = ["csat", "satisfaction", "support", "tickets", "ticket"]
+tickets_opened = ["tickets", "ticket", "support", "opened"]
+refunds = ["refund", "refunds", "refunded", "invoice", "invoices", "amount"]
+marketing_spend = ["marketing", "spend", "campaign", "ads"]
+nps = ["nps", "promoter", "survey", "score"]
+pipeline = ["pipeline", "opportunity", "deal", "sales"]
+headcount = ["employees", "headcount", "staff"]
+churn_reasons = ["churn", "reason", "cancel", "survey"]
+
+[model.phrases]
+# The phrases the stand-in recognises and the vocabulary entry each maps to. General language, not company knowledge:
+# it knows "billings" is a revenue word, not that the company's revenue lives in mart_revenue_daily.
+"net revenue" = "net_revenue"
+"gross revenue" = "gross_revenue"
+"billings" = "gross_revenue"
+"revenue" = "revenue"
+"sales" = "revenue"
+"refunds" = "refunds"
+"queries run" = "queries"
+"query volume" = "queries"
+"csat" = "csat"
+"customer satisfaction" = "csat"
+"support tickets opened" = "tickets_opened"
+"active customers" = "active_accounts"
+"accounts with a login" = "active_accounts"
+"marketing spend" = "marketing_spend"
+"nps" = "nps"
+"sales pipeline" = "pipeline"
+"headcount" = "headcount"
+"churn reasons" = "churn_reasons"
+
+[user]
+# What the person says when the agent asks what they meant by an unanswerable term.
+unknown_reply = "I mean {term} the way the team tracks it."

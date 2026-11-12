@@ -1,0 +1,25 @@
+# Table and column descriptions the data team writes: what the descriptions lever puts into ClickHouse as COMMENTs, so
+# any client that reads the schema (the MCP server, LibreChat, a BI tool) sees them.
+
+[tables]
+dim_accounts = "One row per customer account: name, country code, segment (smb, mid, enterprise)."
+fct_invoices = "Every invoice. status is paid, open, void or refunded; only paid invoices are revenue. amount_net is after tax and discounts, amount_gross before."
+legacy_invoices = "Deprecated: the old billing system, stopped on 2025-06-30. Do not use; use fct_invoices or mart_revenue_daily."
+stg_payments = "Staging: raw payment events. Contains retried payments, so the same invoice can appear twice. Do not sum without deduplicating."
+mart_revenue_daily = "Revenue as finance reports it: net revenue per account per day, paid invoices only. Use this for revenue."
+tmp_revenue_backfill = "Temporary, partial backfill of daily revenue for a migration. Incomplete; do not use."
+dim_plans = "Price list: monthly list price per plan."
+fct_subscriptions = "Subscriptions with start and end dates. Active subscription is not the same as an active customer; activity is logins in raw_events."
+fct_usage_daily = "Daily usage per account: queries run and data scanned."
+raw_events = "Product events per user. An active customer is an account with at least one 'login' event in the period."
+fct_support_tickets = "Support tickets. csat (1-5) is set when a ticket is closed and rated; report CSAT by closed date."
+
+[columns]
+"fct_invoices.amount_net" = "Invoice amount after tax and discounts: the revenue figure finance reports."
+"fct_invoices.amount_gross" = "Invoice amount before tax and discounts: gross billings."
+"fct_invoices.status" = "paid, open, void or refunded."
+"mart_revenue_daily.net_revenue" = "Net revenue: paid invoices after tax and discounts."
+"raw_events.event" = "login, query, export, invite or dashboard_view."
+"fct_support_tickets.csat" = "Customer satisfaction 1-5; NULL when not rated."
+"fct_support_tickets.closed" = "When the ticket was closed; CSAT is counted on this date."
+"fct_usage_daily.queries" = "Queries run that day."

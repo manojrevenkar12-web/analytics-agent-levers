@@ -1,0 +1,30 @@
+export type Interval = { diff: number; lo: number; hi: number };
+export type Kind = { n: number; correct?: number; wrong?: number; missed?: number; gave_up?: number };
+export type Summary = {
+  questions: number;
+  correct: number;
+  wrong: number;
+  missed: number;
+  asked_per_100: number;
+  turns: number;
+  usd_per_question: number;
+  usd_per_correct: number;
+  seconds_p50: number;
+  seconds_p95: number;
+  by_kind: Record<string, Kind>;
+};
+export type Check = { check: string; value: number; limit: number; ok: boolean };
+export type GateRow = { correct: Interval; wrong: Interval; checks: Check[]; ship: boolean };
+export type Data = {
+  order: string[];
+  labels: Record<string, string>;
+  kinds: Record<string, string>;
+  summary: Record<string, Summary>;
+  gate: Record<string, GateRow>;
+  marginal: Record<string, { correct: Interval; wrong: Interval }>;
+  per_seed: Record<string, number[]>;
+  seeds: number[];
+  lever_labels: Record<string, string>;
+  model: { name: string; input_usd_per_mtok: number; output_usd_per_mtok: number };
+  heldout: { summary: Record<string, Summary>; gate: Record<string, GateRow>; ran_at: string } | null;
+};

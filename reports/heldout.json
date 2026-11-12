@@ -1,0 +1,835 @@
+{
+ "seeds": [
+  47
+ ],
+ "settings": {
+  "baseline": [],
+  "descriptions": [
+   "descriptions"
+  ],
+  "metric_catalog": [
+   "metric_catalog"
+  ],
+  "clarify": [
+   "clarify"
+  ],
+  "abstain": [
+   "abstain"
+  ],
+  "all": [
+   "abstain",
+   "clarify",
+   "descriptions",
+   "metric_catalog"
+  ],
+  "all_but_descriptions": [
+   "abstain",
+   "clarify",
+   "metric_catalog"
+  ],
+  "all_but_metric_catalog": [
+   "abstain",
+   "clarify",
+   "descriptions"
+  ],
+  "all_but_clarify": [
+   "abstain",
+   "descriptions",
+   "metric_catalog"
+  ],
+  "all_but_abstain": [
+   "clarify",
+   "descriptions",
+   "metric_catalog"
+  ]
+ },
+ "summary": {
+  "baseline": {
+   "questions": 240,
+   "correct": 0.3,
+   "wrong": 0.7,
+   "missed": 0.0,
+   "gave_up": 0.0,
+   "asked_per_100": 0.0,
+   "turns": 4.466666666666667,
+   "usd_per_question": 0.024448012499999998,
+   "usd_p95": 0.040247700000000004,
+   "usd_per_correct": 0.08149337499999999,
+   "seconds_p50": 11.661701814500043,
+   "seconds_p95": 19.466686630199842,
+   "by_kind": {
+    "ambiguous_term": {
+     "wrong": 0.8333333333333334,
+     "correct": 0.16666666666666666,
+     "n": 90
+    },
+    "unanswerable": {
+     "wrong": 1.0,
+     "n": 26
+    },
+    "answerable": {
+     "correct": 0.4830508474576271,
+     "wrong": 0.5169491525423728,
+     "n": 118
+    },
+    "ambiguous_entity": {
+     "wrong": 1.0,
+     "n": 6
+    }
+   }
+  },
+  "descriptions": {
+   "questions": 240,
+   "correct": 0.6208333333333333,
+   "wrong": 0.37916666666666665,
+   "missed": 0.0,
+   "gave_up": 0.0,
+   "asked_per_100": 0.0,
+   "turns": 4.2875,
+   "usd_per_question": 0.026171099999999996,
+   "usd_p95": 0.02992245,
+   "usd_per_correct": 0.042154791946308716,
+   "seconds_p50": 11.661002083999984,
+   "seconds_p95": 14.26532639379966,
+   "by_kind": {
+    "ambiguous_term": {
+     "wrong": 0.5222222222222223,
+     "correct": 0.4777777777777778,
+     "n": 90
+    },
+    "unanswerable": {
+     "wrong": 1.0,
+     "n": 26
+    },
+    "answerable": {
+     "correct": 0.8898305084745762,
+     "wrong": 0.11016949152542373,
+     "n": 118
+    },
+    "ambiguous_entity": {
+     "wrong": 0.8333333333333334,
+     "correct": 0.16666666666666666,
+     "n": 6
+    }
+   }
+  },
+  "metric_catalog": {
+   "questions": 240,
+   "correct": 0.5333333333333333,
+   "wrong": 0.4666666666666667,
+   "missed": 0.0,
+   "gave_up": 0.0,
+   "asked_per_100": 0.0,
+   "turns": 4.4875,
+   "usd_per_question": 0.023751324999999997,
+   "usd_p95": 0.0322506,
+   "usd_per_correct": 0.044533734374999995,
+   "seconds_p50": 14.258583971000121,
+   "seconds_p95": 16.864532323450103,
+   "by_kind": {
+    "ambiguous_term": {
+     "wrong": 0.4,
+     "correct": 0.6,
+     "n": 90
+    },
+    "unanswerable": {
+     "wrong": 1.0,
+     "n": 26
+    },
+    "answerable": {
+     "correct": 0.6271186440677966,
+     "wrong": 0.3728813559322034,
+     "n": 118
+    },
+    "ambiguous_entity": {
+     "wrong": 1.0,
+     "n": 6
+    }
+   }
+  },
+  "clarify": {
+   "questions": 240,
+   "correct": 0.48333333333333334,
+   "wrong": 0.5166666666666667,
+   "missed": 0.0,
+   "gave_up": 0.0,
+   "asked_per_100": 80.0,
+   "turns": 5.1125,
+   "usd_per_question": 0.027754149999999995,
+   "usd_p95": 0.032930549999999996,
+   "usd_per_correct": 0.05742237931034482,
+   "seconds_p50": 14.26013009650012,
+   "seconds_p95": 16.86514309954996,
+   "by_kind": {
+    "ambiguous_term": {
+     "wrong": 0.45555555555555555,
+     "correct": 0.5444444444444444,
+     "n": 90
+    },
+    "unanswerable": {
+     "wrong": 1.0,
+     "n": 26
+    },
+    "answerable": {
+     "correct": 0.559322033898305,
+     "wrong": 0.4406779661016949,
+     "n": 118
+    },
+    "ambiguous_entity": {
+     "wrong": 0.8333333333333334,
+     "correct": 0.16666666666666666,
+     "n": 6
+    }
+   }
+  },
+  "abstain": {
+   "questions": 240,
+   "correct": 0.25,
+   "wrong": 0.05416666666666667,
+   "missed": 0.6958333333333333,
+   "gave_up": 0.0,
+   "asked_per_100": 0.0,
+   "turns": 3.4625,
+   "usd_per_question": 0.0187778875,
+   "usd_p95": 0.02209965,
+   "usd_per_correct": 0.07511155,
+   "seconds_p50": 9.055834946500045,
+   "seconds_p95": 11.66671655615005,
+   "by_kind": {
+    "ambiguous_term": {
+     "missed": 1.0,
+     "n": 90
+    },
+    "unanswerable": {
+     "correct": 1.0,
+     "n": 26
+    },
+    "answerable": {
+     "correct": 0.288135593220339,
+     "wrong": 0.11016949152542373,
+     "missed": 0.6016949152542372,
+     "n": 118
+    },
+    "ambiguous_entity": {
+     "missed": 1.0,
+     "n": 6
+    }
+   }
+  },
+  "all": {
+   "questions": 240,
+   "correct": 0.7875,
+   "wrong": 0.004166666666666667,
+   "missed": 0.20833333333333334,
+   "gave_up": 0.0,
+   "asked_per_100": 35.833333333333336,
+   "turns": 4.395833333333333,
+   "usd_per_question": 0.0245746625,
+   "usd_p95": 0.03516045,
+   "usd_per_correct": 0.031205920634920635,
+   "seconds_p50": 14.254233889000034,
+   "seconds_p95": 16.86366823174997,
+   "by_kind": {
+    "ambiguous_term": {
+     "missed": 0.3,
+     "correct": 0.6888888888888889,
+     "wrong": 0.011111111111111112,
+     "n": 90
+    },
+    "unanswerable": {
+     "correct": 1.0,
+     "n": 26
+    },
+    "answerable": {
+     "correct": 0.8135593220338984,
+     "missed": 0.1864406779661017,
+     "n": 118
+    },
+    "ambiguous_entity": {
+     "correct": 0.8333333333333334,
+     "missed": 0.16666666666666666,
+     "n": 6
+    }
+   }
+  },
+  "all_but_descriptions": {
+   "questions": 240,
+   "correct": 0.6416666666666667,
+   "wrong": 0.0625,
+   "missed": 0.29583333333333334,
+   "gave_up": 0.0,
+   "asked_per_100": 45.416666666666664,
+   "turns": 4.45,
+   "usd_per_question": 0.023368625,
+   "usd_p95": 0.031731300000000004,
+   "usd_per_correct": 0.03641863636363637,
+   "seconds_p50": 14.254595318999918,
+   "seconds_p95": 16.860822179299944,
+   "by_kind": {
+    "ambiguous_term": {
+     "missed": 0.3,
+     "correct": 0.6888888888888889,
+     "wrong": 0.011111111111111112,
+     "n": 90
+    },
+    "unanswerable": {
+     "correct": 1.0,
+     "n": 26
+    },
+    "answerable": {
+     "correct": 0.5423728813559322,
+     "wrong": 0.11016949152542373,
+     "missed": 0.3474576271186441,
+     "n": 118
+    },
+    "ambiguous_entity": {
+     "correct": 0.3333333333333333,
+     "missed": 0.5,
+     "wrong": 0.16666666666666666,
+     "n": 6
+    }
+   }
+  },
+  "all_but_metric_catalog": {
+   "questions": 240,
+   "correct": 0.7583333333333333,
+   "wrong": 0.004166666666666667,
+   "missed": 0.2375,
+   "gave_up": 0.0,
+   "asked_per_100": 57.916666666666664,
+   "turns": 4.420833333333333,
+   "usd_per_question": 0.026641012500000002,
+   "usd_p95": 0.035620349999999995,
+   "usd_per_correct": 0.0351310054945055,
+   "seconds_p50": 11.662601676000145,
+   "seconds_p95": 16.863849144499955,
+   "by_kind": {
+    "ambiguous_term": {
+     "missed": 0.3111111111111111,
+     "correct": 0.6777777777777778,
+     "wrong": 0.011111111111111112,
+     "n": 90
+    },
+    "unanswerable": {
+     "correct": 1.0,
+     "n": 26
+    },
+    "answerable": {
+     "correct": 0.7627118644067796,
+     "missed": 0.23728813559322035,
+     "n": 118
+    },
+    "ambiguous_entity": {
+     "correct": 0.8333333333333334,
+     "missed": 0.16666666666666666,
+     "n": 6
+    }
+   }
+  },
+  "all_but_clarify": {
+   "questions": 240,
+   "correct": 0.7291666666666666,
+   "wrong": 0.0,
+   "missed": 0.2708333333333333,
+   "gave_up": 0.0,
+   "asked_per_100": 0.0,
+   "turns": 3.975,
+   "usd_per_question": 0.022021899999999997,
+   "usd_p95": 0.02931375,
+   "usd_per_correct": 0.030201462857142855,
+   "seconds_p50": 11.654945867500283,
+   "seconds_p95": 14.263372611999785,
+   "by_kind": {
+    "ambiguous_term": {
+     "missed": 0.4111111111111111,
+     "correct": 0.5888888888888889,
+     "n": 90
+    },
+    "unanswerable": {
+     "correct": 1.0,
+     "n": 26
+    },
+    "answerable": {
+     "correct": 0.8135593220338984,
+     "missed": 0.1864406779661017,
+     "n": 118
+    },
+    "ambiguous_entity": {
+     "missed": 1.0,
+     "n": 6
+    }
+   }
+  },
+  "all_but_abstain": {
+   "questions": 240,
+   "correct": 0.7291666666666666,
+   "wrong": 0.2708333333333333,
+   "missed": 0.0,
+   "gave_up": 0.0,
+   "asked_per_100": 35.833333333333336,
+   "turns": 4.725,
+   "usd_per_question": 0.026708812500000005,
+   "usd_p95": 0.04039515,
+   "usd_per_correct": 0.03662922857142858,
+   "seconds_p50": 14.261108089000004,
+   "seconds_p95": 19.462092566100033,
+   "by_kind": {
+    "ambiguous_term": {
+     "wrong": 0.3111111111111111,
+     "correct": 0.6888888888888889,
+     "n": 90
+    },
+    "unanswerable": {
+     "wrong": 1.0,
+     "n": 26
+    },
+    "answerable": {
+     "correct": 0.9067796610169492,
+     "wrong": 0.09322033898305085,
+     "n": 118
+    },
+    "ambiguous_entity": {
+     "correct": 1.0,
+     "n": 6
+    }
+   }
+  }
+ },
+ "per_seed": {
+  "baseline": [
+   0.3
+  ],
+  "descriptions": [
+   0.6208333333333333
+  ],
+  "metric_catalog": [
+   0.5333333333333333
+  ],
+  "clarify": [
+   0.48333333333333334
+  ],
+  "abstain": [
+   0.25
+  ],
+  "all": [
+   0.7875
+  ],
+  "all_but_descriptions": [
+   0.6416666666666667
+  ],
+  "all_but_metric_catalog": [
+   0.7583333333333333
+  ],
+  "all_but_clarify": [
+   0.7291666666666666
+  ],
+  "all_but_abstain": [
+   0.7291666666666666
+  ]
+ },
+ "gate": {
+  "descriptions": {
+   "correct": {
+    "diff": 0.32083333333333336,
+    "lo": 0.25833333333333336,
+    "hi": 0.38333333333333336
+   },
+   "wrong": {
+    "diff": -0.32083333333333336,
+    "lo": -0.38333333333333336,
+    "hi": -0.2625
+   },
+   "checks": [
+    {
+     "check": "correctness gain, lower end of the 95% interval",
+     "value": 0.25833333333333336,
+     "limit": 0.0,
+     "ok": true
+    },
+    {
+     "check": "change in confidently wrong answers, upper end of the 95% interval",
+     "value": -0.2625,
+     "limit": 0.005,
+     "ok": true
+    },
+    {
+     "check": "cost per question (USD)",
+     "value": 0.026171099999999996,
+     "limit": 0.05,
+     "ok": true
+    },
+    {
+     "check": "clarifying questions per 100 questions",
+     "value": 0.0,
+     "limit": 40,
+     "ok": true
+    }
+   ],
+   "ship": true
+  },
+  "metric_catalog": {
+   "correct": {
+    "diff": 0.23333333333333334,
+    "lo": 0.17916666666666667,
+    "hi": 0.2916666666666667
+   },
+   "wrong": {
+    "diff": -0.23333333333333334,
+    "lo": -0.2875,
+    "hi": -0.18333333333333332
+   },
+   "checks": [
+    {
+     "check": "correctness gain, lower end of the 95% interval",
+     "value": 0.17916666666666667,
+     "limit": 0.0,
+     "ok": true
+    },
+    {
+     "check": "change in confidently wrong answers, upper end of the 95% interval",
+     "value": -0.18333333333333332,
+     "limit": 0.005,
+     "ok": true
+    },
+    {
+     "check": "cost per question (USD)",
+     "value": 0.023751324999999997,
+     "limit": 0.05,
+     "ok": true
+    },
+    {
+     "check": "clarifying questions per 100 questions",
+     "value": 0.0,
+     "limit": 40,
+     "ok": true
+    }
+   ],
+   "ship": true
+  },
+  "clarify": {
+   "correct": {
+    "diff": 0.18333333333333332,
+    "lo": 0.1375,
+    "hi": 0.23333333333333334
+   },
+   "wrong": {
+    "diff": -0.18333333333333332,
+    "lo": -0.23333333333333334,
+    "hi": -0.1375
+   },
+   "checks": [
+    {
+     "check": "correctness gain, lower end of the 95% interval",
+     "value": 0.1375,
+     "limit": 0.0,
+     "ok": true
+    },
+    {
+     "check": "change in confidently wrong answers, upper end of the 95% interval",
+     "value": -0.1375,
+     "limit": 0.005,
+     "ok": true
+    },
+    {
+     "check": "cost per question (USD)",
+     "value": 0.027754149999999995,
+     "limit": 0.05,
+     "ok": true
+    },
+    {
+     "check": "clarifying questions per 100 questions",
+     "value": 80.0,
+     "limit": 40,
+     "ok": false
+    }
+   ],
+   "ship": false
+  },
+  "abstain": {
+   "correct": {
+    "diff": -0.05,
+    "lo": -0.1125,
+    "hi": 0.016666666666666666
+   },
+   "wrong": {
+    "diff": -0.6458333333333334,
+    "lo": -0.7083333333333334,
+    "hi": -0.5875
+   },
+   "checks": [
+    {
+     "check": "correctness gain, lower end of the 95% interval",
+     "value": -0.1125,
+     "limit": 0.0,
+     "ok": false
+    },
+    {
+     "check": "change in confidently wrong answers, upper end of the 95% interval",
+     "value": -0.5875,
+     "limit": 0.005,
+     "ok": true
+    },
+    {
+     "check": "cost per question (USD)",
+     "value": 0.0187778875,
+     "limit": 0.05,
+     "ok": true
+    },
+    {
+     "check": "clarifying questions per 100 questions",
+     "value": 0.0,
+     "limit": 40,
+     "ok": true
+    }
+   ],
+   "ship": false
+  },
+  "all": {
+   "correct": {
+    "diff": 0.4875,
+    "lo": 0.4125,
+    "hi": 0.5583333333333333
+   },
+   "wrong": {
+    "diff": -0.6958333333333333,
+    "lo": -0.7583333333333333,
+    "hi": -0.6375
+   },
+   "checks": [
+    {
+     "check": "correctness gain, lower end of the 95% interval",
+     "value": 0.4125,
+     "limit": 0.0,
+     "ok": true
+    },
+    {
+     "check": "change in confidently wrong answers, upper end of the 95% interval",
+     "value": -0.6375,
+     "limit": 0.005,
+     "ok": true
+    },
+    {
+     "check": "cost per question (USD)",
+     "value": 0.0245746625,
+     "limit": 0.05,
+     "ok": true
+    },
+    {
+     "check": "clarifying questions per 100 questions",
+     "value": 35.833333333333336,
+     "limit": 40,
+     "ok": true
+    }
+   ],
+   "ship": true
+  },
+  "all_but_descriptions": {
+   "correct": {
+    "diff": 0.3416666666666667,
+    "lo": 0.275,
+    "hi": 0.4125
+   },
+   "wrong": {
+    "diff": -0.6375,
+    "lo": -0.7,
+    "hi": -0.5791666666666667
+   },
+   "checks": [
+    {
+     "check": "correctness gain, lower end of the 95% interval",
+     "value": 0.275,
+     "limit": 0.0,
+     "ok": true
+    },
+    {
+     "check": "change in confidently wrong answers, upper end of the 95% interval",
+     "value": -0.5791666666666667,
+     "limit": 0.005,
+     "ok": true
+    },
+    {
+     "check": "cost per question (USD)",
+     "value": 0.023368625,
+     "limit": 0.05,
+     "ok": true
+    },
+    {
+     "check": "clarifying questions per 100 questions",
+     "value": 45.416666666666664,
+     "limit": 40,
+     "ok": false
+    }
+   ],
+   "ship": false
+  },
+  "all_but_metric_catalog": {
+   "correct": {
+    "diff": 0.4583333333333333,
+    "lo": 0.38333333333333336,
+    "hi": 0.5291666666666667
+   },
+   "wrong": {
+    "diff": -0.6958333333333333,
+    "lo": -0.7583333333333333,
+    "hi": -0.6375
+   },
+   "checks": [
+    {
+     "check": "correctness gain, lower end of the 95% interval",
+     "value": 0.38333333333333336,
+     "limit": 0.0,
+     "ok": true
+    },
+    {
+     "check": "change in confidently wrong answers, upper end of the 95% interval",
+     "value": -0.6375,
+     "limit": 0.005,
+     "ok": true
+    },
+    {
+     "check": "cost per question (USD)",
+     "value": 0.026641012500000002,
+     "limit": 0.05,
+     "ok": true
+    },
+    {
+     "check": "clarifying questions per 100 questions",
+     "value": 57.916666666666664,
+     "limit": 40,
+     "ok": false
+    }
+   ],
+   "ship": false
+  },
+  "all_but_clarify": {
+   "correct": {
+    "diff": 0.42916666666666664,
+    "lo": 0.35833333333333334,
+    "hi": 0.5041666666666667
+   },
+   "wrong": {
+    "diff": -0.7,
+    "lo": -0.7583333333333333,
+    "hi": -0.6416666666666667
+   },
+   "checks": [
+    {
+     "check": "correctness gain, lower end of the 95% interval",
+     "value": 0.35833333333333334,
+     "limit": 0.0,
+     "ok": true
+    },
+    {
+     "check": "change in confidently wrong answers, upper end of the 95% interval",
+     "value": -0.6416666666666667,
+     "limit": 0.005,
+     "ok": true
+    },
+    {
+     "check": "cost per question (USD)",
+     "value": 0.022021899999999997,
+     "limit": 0.05,
+     "ok": true
+    },
+    {
+     "check": "clarifying questions per 100 questions",
+     "value": 0.0,
+     "limit": 40,
+     "ok": true
+    }
+   ],
+   "ship": true
+  },
+  "all_but_abstain": {
+   "correct": {
+    "diff": 0.42916666666666664,
+    "lo": 0.3625,
+    "hi": 0.49583333333333335
+   },
+   "wrong": {
+    "diff": -0.42916666666666664,
+    "lo": -0.49583333333333335,
+    "hi": -0.36666666666666664
+   },
+   "checks": [
+    {
+     "check": "correctness gain, lower end of the 95% interval",
+     "value": 0.3625,
+     "limit": 0.0,
+     "ok": true
+    },
+    {
+     "check": "change in confidently wrong answers, upper end of the 95% interval",
+     "value": -0.36666666666666664,
+     "limit": 0.005,
+     "ok": true
+    },
+    {
+     "check": "cost per question (USD)",
+     "value": 0.026708812500000005,
+     "limit": 0.05,
+     "ok": true
+    },
+    {
+     "check": "clarifying questions per 100 questions",
+     "value": 35.833333333333336,
+     "limit": 40,
+     "ok": true
+    }
+   ],
+   "ship": true
+  }
+ },
+ "marginal": {
+  "descriptions": {
+   "correct": {
+    "diff": 0.14583333333333334,
+    "lo": 0.10416666666666667,
+    "hi": 0.19583333333333333
+   },
+   "wrong": {
+    "diff": -0.058333333333333334,
+    "lo": -0.0875,
+    "hi": -0.029166666666666667
+   }
+  },
+  "metric_catalog": {
+   "correct": {
+    "diff": 0.029166666666666667,
+    "lo": 0.008333333333333333,
+    "hi": 0.05
+   },
+   "wrong": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0
+   }
+  },
+  "clarify": {
+   "correct": {
+    "diff": 0.058333333333333334,
+    "lo": 0.03333333333333333,
+    "hi": 0.0875
+   },
+   "wrong": {
+    "diff": 0.004166666666666667,
+    "lo": 0.0,
+    "hi": 0.0125
+   }
+  },
+  "abstain": {
+   "correct": {
+    "diff": 0.058333333333333334,
+    "lo": 0.008333333333333333,
+    "hi": 0.10833333333333334
+   },
+   "wrong": {
+    "diff": -0.26666666666666666,
+    "lo": -0.325,
+    "hi": -0.2125
+   }
+  }
+ },
+ "seconds": 26.0,
+ "ran_at": "2026-11-12T11:57:18.335083+00:00"
+}
